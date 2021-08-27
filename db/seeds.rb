@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+
 puts 'Seeding User data...🙋‍♂️'
 
 User.create(username: 'Ethan', email: 'ethan_rodriguez@yahoo.com', password_digest: 1234)
@@ -28,13 +30,13 @@ end
 
 
 puts 'Seeding carts...🛒 🛒 🛒'
-20.times do 
+10.times do 
 Cart.create(user_id: rand(1..4))
 end
 
 
 puts 'Seeding line items...'
-20.times do
+10.times do
 LineItem.create(cart_id: rand(1..4), item_id: rand(1..4))
 end
 
